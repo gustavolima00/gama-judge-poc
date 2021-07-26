@@ -1,7 +1,7 @@
 import Latex from 'react-latex-next'
 import ProblemContent from './ProblemContent';
 
-const content = 'Lorem ipsum \\(x_1\\) dolor \\[\\sin(\\alpha) + \\cos(\\theta)\\] sit amet, consectetur adipisicing elit...\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris...\nLorem ipsum dolor \\(x^2\\) sit amet, consectetur adipisicing elit...\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris...\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris...\nUt enim ad minim veniam, quis nostrud exercitation ullamco laboris...';
+const statement = 'You are given a person\'s systolic blood pressure, $A$, and diastolic blood pressure, $B$.\nFind the mean arterial pressure, $C$, which we define as follows:\n $C = \\frac{A-B}{3} + B$';
 const sampleInputs =
   [
     {
@@ -16,9 +16,8 @@ const sampleInputs =
     }
   ]
 const constraints = [
-  '1 $\\le$ A $\\leq$ $10^5$',
-  '1 $\\le$ B $\\leq$ $10^5$',
-  '1 $\\le$ C $\\leq$ $10^{18}$',
+  '$50$ $\\le$ $B$ $\\leq$ $A$ $\\leq$ $300$ ',
+  'All values in input are integers.'
 ]
 
 const Problem = () => {
@@ -35,7 +34,7 @@ const Problem = () => {
         <ProblemContent
           className="col-8"
           title="A. Problem Title"
-          context={content}
+          statement={statement}
           constraints={constraints}
           sampleInputs={sampleInputs}
         />
