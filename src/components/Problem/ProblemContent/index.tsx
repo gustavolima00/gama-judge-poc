@@ -6,7 +6,6 @@ const ProblemContent = ({ className, problem }: ProblemContentProps) => {
     
     return (
         <div className={className}>
-
             <h1>{title}</h1>
             <hr />
             <h3>Problem Statement</h3>

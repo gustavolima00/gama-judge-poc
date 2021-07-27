@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import Home from "./components/home";
-import Problem from "./components/problem";
+import Problem from "./components/Problem";
 import 'katex/dist/katex.min.css'
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -12,7 +12,7 @@ const App = () => (
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <div>
       <Route exact path="/" component={Home} />
-      <Route path="/problem" component={Problem} />
+      <Route path="/problem/:problemId" component={Problem} />
     </div>
   </Router>
 );
