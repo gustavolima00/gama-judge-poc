@@ -1,4 +1,4 @@
-const BASE_URL = 'https://8285c8c8-5cdc-4532-97ae-b49d79be8e71.mock.pstmn.io'
+const BASE_URL = 'https://df74e436-41b3-4675-99d3-756563dfe55d.mock.pstmn.io'
 
 export const getAsync = async (endpoint: string, headers: Headers = new Headers()) =>{
     const requestOptions = {
