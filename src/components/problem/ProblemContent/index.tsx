@@ -1,6 +1,9 @@
 import Latex from 'react-latex-next'
+import { Problem } from '../../../models/Problem'
 
-const ProblemContent = ({ className, title, statement, constraints = [], sampleInputs = [] }: ProblemContentProps) => {
+const ProblemContent = ({ className, problem }: ProblemContentProps) => {
+    const { title, statement, constraints, sampleInputs } = problem
+    
     return (
         <div className={className}>
 
@@ -51,13 +54,5 @@ export default ProblemContent;
 
 export type ProblemContentProps = {
     className?: string
-    title: string
-    statement: string
-    constraints?: string[]
-    sampleInputs?: SampleInput[]
-}
-
-export type SampleInput = {
-    input: string
-    output: string
+    problem: Problem
 }

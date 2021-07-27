@@ -1,26 +1,22 @@
+import { useState, useEffect } from 'react'
 import Latex from 'react-latex-next'
 import ProblemContent from './ProblemContent';
-
-const statement = 'You are given a person\'s systolic blood pressure, $A$, and diastolic blood pressure, $B$.\nFind the mean arterial pressure, $C$, which we define as follows:\n $C = \\frac{A-B}{3} + B$';
-const sampleInputs =
-  [
-    {
-      title: "Sample input 1",
-      input: "1 2 3",
-      output: "a b c"
-    },
-    {
-      title: "Sample input 2",
-      input: "2 3 4",
-      output: "c d e"
-    }
-  ]
-const constraints = [
-  '$50$ $\\le$ $B$ $\\leq$ $A$ $\\leq$ $300$ ',
-  'All values in input are integers.'
-]
+import { Problem as ProblemModel } from '../../models/Problem'
+import { getProblemAsync } from '../../actions/problem';
 
 const Problem = () => {
+  const [problem, setProblem] = useState<ProblemModel>(new ProblemModel())
+  const [loading, setLoading] = useState<boolean>(true)
+
+  useEffect(() => {
+    getProblemAsync('1')
+      .then(problemResponse => {
+        setProblem(problemResponse);
+        setLoading(false)
+      })
+      .catch(e => console.log(e))
+  }, [loading]);
+
   return (
     <div className="problem-page-container">
       <div className="jumbotron text-center bg-dark text-white">
@@ -33,10 +29,7 @@ const Problem = () => {
         </div>
         <ProblemContent
           className="col-8"
-          title="A. Problem Title"
-          statement={statement}
-          constraints={constraints}
-          sampleInputs={sampleInputs}
+          problem={problem}
         />
       </div>
     </div>
