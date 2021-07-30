@@ -3,7 +3,7 @@ import { Problem } from '../../../models/Problem'
 
 const ProblemContent = ({ className, problem }: ProblemContentProps) => {
     const { title, statement, constraints, sampleInputs } = problem
-    
+
     return (
         <div className={className}>
             <h1>{title}</h1>
@@ -15,7 +15,7 @@ const ProblemContent = ({ className, problem }: ProblemContentProps) => {
             }
             {(constraints.length !== 0) &&
                 <div>
-                    <h3>Contrains</h3>
+                    <h3>Constrains</h3>
                     <div>
                         {constraints.map((constraint, i) =>
                             <li key={i}><Latex>{constraint}</Latex></li>
