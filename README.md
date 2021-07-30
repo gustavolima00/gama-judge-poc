@@ -48,3 +48,8 @@ To learn React, check out the [React documentation](https://reactjs.org/).
 ## Bootstrap documentation
 
 https://react-bootstrap.github.io/
+
+## Deploy 
+
+The deploy is avalible to a static s3 bucket with the following command, more information about amazon s3 here https://aws.amazon.com/pt/s3/
+`yarn build && yarn deploy`
